@@ -1,0 +1,32 @@
+{
+  "name": "js-service-common",
+  "version": "1.0.0",
+  "description": "JS Service Common",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tabb-global/js-service-common.git"
+  },
+  "author": "Csaba Zamolyi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tabb-global/js-service-common/issues"
+  },
+  "homepage": "https://github.com/tabb-global/js-service-common#readme",
+  "peerDependencies": {
+    "@nestjs/common": "^5.0.1"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^5.0.1",
+    "@nestjs/core": "^5.0.1",
+    "redis": "^2.8.0",
+    "joi": "^13.4.0",
+    "winston": "^3.0.0-rc6",
+    "@types/node": "^9.3.0",
+    "dotenv": "^6.0.0",
+    "rxjs": "^6.2.0"
+  }
+}
