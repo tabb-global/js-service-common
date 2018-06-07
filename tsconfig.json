@@ -5,7 +5,12 @@
     "declaration": true,
     "outDir": "./dist",
     "allowJs": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
   },
   "include": [
     "src/**/*"

@@ -5,8 +5,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const ConfigService_1 = require("../config/ConfigService");
 const winston = require("winston");
 const util = require("util");
 const SlackWebHook = require('winston-slack-webhook').SlackWebHook;
@@ -37,7 +41,6 @@ let LoggerService = class LoggerService {
         });
     }
     setUpMainLogger() {
-        // noinspection TypeScriptValidateJSTypes
         this.mainLogger = winston.createLogger({
             level: process.env.LOG_LEVEL || 'debug',
             levels: {
@@ -65,7 +68,6 @@ let LoggerService = class LoggerService {
             ],
         });
         if (process.env.NODE_ENV !== 'testing') {
-            // noinspection TypeScriptValidateJSTypes
             this.mainLogger.add(new winston.transports.Console({
                 format: winston.format.simple(),
                 stderrLevels: ['error', 'crit', 'emerg'],
@@ -105,6 +107,7 @@ let LoggerService = class LoggerService {
     }
 };
 LoggerService = __decorate([
-    common_1.Injectable()
+    common_1.Injectable(),
+    __metadata("design:paramtypes", [ConfigService_1.ConfigService])
 ], LoggerService);
 exports.LoggerService = LoggerService;

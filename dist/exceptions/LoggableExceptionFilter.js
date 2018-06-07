@@ -8,7 +8,6 @@ class LoggableExceptionFilter {
         let message;
         let level;
         let other;
-        //Parse message
         if (!e.message && !e.name)
             message = 'Unknown Exception';
         else if (typeof e.message === 'string' || e.message instanceof String)
@@ -19,7 +18,6 @@ class LoggableExceptionFilter {
             message = e.message.errorObject.message;
         else if (e.message.message && (typeof e.message.message === 'string' || e.message.message instanceof String))
             message = e.message.message;
-        //Parse level
         if (e.message && e.message instanceof Object && e.message.level)
             level = e.message.level;
         else
